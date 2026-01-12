@@ -51,12 +51,6 @@ const MobileMenu = ({ isOpen, activeSection, scrollToSection }: MobileMenuProps)
         >
           Vorteile
         </MobileNavLink>
-        <MobileNavLink 
-          active={activeSection === "contact"} 
-          onClick={() => scrollToSection("contact")}
-        >
-          Zugang sichern
-        </MobileNavLink>
         
         {/* Login button in mobile menu */}
         <div className="pt-2 mt-2 border-t border-gold/10">

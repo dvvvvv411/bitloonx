@@ -43,12 +43,6 @@ const DesktopNavigation = ({ activeSection, scrollToSection }: DesktopNavigation
       >
         Vorteile
       </NavLink>
-      <NavLink 
-        active={activeSection === "contact"} 
-        onClick={() => scrollToSection("contact")}
-      >
-        Zugang sichern
-      </NavLink>
       
       <motion.div
         whileHover={{ scale: 1.05 }}

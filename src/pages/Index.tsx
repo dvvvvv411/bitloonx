@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import CtaSection from "@/components/landing/CtaSection";
-import ContactSection from "@/components/landing/ContactSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import PartnersSection from "@/components/landing/PartnersSection";
@@ -36,10 +35,6 @@ const Index = () => {
         
         <div className="relative z-10" id="cta">
           <CtaSection />
-        </div>
-        
-        <div className="relative z-10" id="contact">
-          <ContactSection />
         </div>
         
         <div className="relative z-10" id="benefits">
