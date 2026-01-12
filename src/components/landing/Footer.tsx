@@ -1,9 +1,15 @@
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <footer className="bg-casino-darker relative overflow-hidden">
@@ -38,9 +44,9 @@ const Footer = () => {
           >
             <h3 className="text-lg font-bold mb-4">Plattform</h3>
             <ul className="space-y-2">
-              <li><Link to="/trading-bot" className="text-gray-400 hover:text-gold transition-colors">Trading Bot</Link></li>
-              <li><Link to="/status" className="text-gray-400 hover:text-gold transition-colors">Status</Link></li>
-              <li><Link to="/partner" className="text-gray-400 hover:text-gold transition-colors">Partner</Link></li>
+              <li><button onClick={() => scrollToSection("cta")} className="text-gray-400 hover:text-gold transition-colors">Trading Bot</button></li>
+              <li><button onClick={() => scrollToSection("contact")} className="text-gray-400 hover:text-gold transition-colors">Status</button></li>
+              <li><button onClick={() => scrollToSection("partners")} className="text-gray-400 hover:text-gold transition-colors">Partner</button></li>
             </ul>
           </motion.div>
           
@@ -52,8 +58,8 @@ const Footer = () => {
           >
             <h3 className="text-lg font-bold mb-4">Information</h3>
             <ul className="space-y-2">
-              <li><Link to="/erfahrungen" className="text-gray-400 hover:text-gold transition-colors">Erfahrungen</Link></li>
-              <li><Link to="/faq" className="text-gray-400 hover:text-gold transition-colors">FAQ</Link></li>
+              <li><button onClick={() => scrollToSection("testimonials")} className="text-gray-400 hover:text-gold transition-colors">Erfahrungen</button></li>
+              <li><button onClick={() => scrollToSection("contact")} className="text-gray-400 hover:text-gold transition-colors">FAQ</button></li>
             </ul>
           </motion.div>
           
@@ -65,7 +71,7 @@ const Footer = () => {
           >
             <h3 className="text-lg font-bold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="#contact" className="text-gray-400 hover:text-gold transition-colors">Kontakt</a></li>
+              <li><button onClick={() => scrollToSection("contact")} className="text-gray-400 hover:text-gold transition-colors">Kontakt</button></li>
             </ul>
           </motion.div>
         </div>
@@ -77,10 +83,10 @@ const Footer = () => {
             </p>
             
             <div className="flex space-x-6">
-              <Link to="/impressum" className="text-gray-400 hover:text-gold text-sm transition-colors">Impressum</Link>
-              <Link to="/datenschutz" className="text-gray-400 hover:text-gold text-sm transition-colors">Datenschutz</Link>
-              <Link to="/agb" className="text-gray-400 hover:text-gold text-sm transition-colors">AGB</Link>
-              <Link to="/haftungsausschluss" className="text-gray-400 hover:text-gold text-sm transition-colors">Haftungsausschluss</Link>
+              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">Impressum</button>
+              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">Datenschutz</button>
+              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">AGB</button>
+              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">Haftungsausschluss</button>
             </div>
           </div>
         </div>
