@@ -56,7 +56,7 @@ const MobileMenu = ({ isOpen, activeSection, scrollToSection }: MobileMenuProps)
         <div className="pt-2 mt-2 border-t border-gold/10">
           <Button 
             className="w-full bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all"
-            onClick={() => {}} 
+            onClick={() => window.location.href = "https://web.bitloonx.de/auth"} 
           >
             <LogIn className="mr-2 h-4 w-4" />
             Anmelden

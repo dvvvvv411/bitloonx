@@ -243,9 +243,7 @@ const HeroSection = () => {
               scale: 0.98
             }} className="relative">
                 
-                <Button onClick={() => document.getElementById("contact")?.scrollIntoView({
-                behavior: "smooth"
-              })} className="w-full sm:w-auto bg-gold hover:bg-gold/90 text-black font-medium text-base px-6 py-5 rounded-md shadow-lg border border-transparent transition-all duration-300 relative z-10">
+                <Button onClick={() => window.location.href = "https://web.bitloonx.de/auth"} className="w-full sm:w-auto bg-gold hover:bg-gold/90 text-black font-medium text-base px-6 py-5 rounded-md shadow-lg border border-transparent transition-all duration-300 relative z-10">
                   <motion.span animate={{
                   x: [0, 4, 0]
                 }} transition={{
