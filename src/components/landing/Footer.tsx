@@ -50,7 +50,6 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Plattform</h3>
             <ul className="space-y-2">
               <li><button onClick={() => scrollToSection("cta")} className="text-gray-400 hover:text-gold transition-colors">Trading Bot</button></li>
-              <li><button onClick={() => scrollToSection("contact")} className="text-gray-400 hover:text-gold transition-colors">Status</button></li>
               <li><button onClick={() => scrollToSection("partners")} className="text-gray-400 hover:text-gold transition-colors">Partner</button></li>
             </ul>
           </motion.div>
@@ -64,19 +63,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Information</h3>
             <ul className="space-y-2">
               <li><button onClick={() => scrollToSection("testimonials")} className="text-gray-400 hover:text-gold transition-colors">Erfahrungen</button></li>
-              <li><button onClick={() => scrollToSection("contact")} className="text-gray-400 hover:text-gold transition-colors">FAQ</button></li>
-            </ul>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h3 className="text-lg font-bold mb-4">Support</h3>
-            <ul className="space-y-2">
-              <li><button onClick={() => scrollToSection("contact")} className="text-gray-400 hover:text-gold transition-colors">Kontakt</button></li>
+              <li><button onClick={() => scrollToSection("benefits")} className="text-gray-400 hover:text-gold transition-colors">Vorteile</button></li>
             </ul>
           </motion.div>
         </div>
