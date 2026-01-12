@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { LogIn, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import NavLink from "./NavLink";
-import { useLocation } from "react-router-dom";
 
 interface DesktopNavigationProps {
   activeSection: string;
@@ -11,53 +10,44 @@ interface DesktopNavigationProps {
 }
 
 const DesktopNavigation = ({ activeSection, scrollToSection }: DesktopNavigationProps) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  
   return (
     <div className="hidden md:flex items-center space-x-6">
       <NavLink 
-        active={currentPath === "/" && activeSection === "hero"} 
+        active={activeSection === "hero"} 
         onClick={() => scrollToSection("hero")}
         icon={<Star className="w-4 h-4 mr-1" />}
       >
         Home
       </NavLink>
       <NavLink 
-        active={currentPath === "/trading-bot"} 
-        onClick={() => window.location.href = '/trading-bot'}
+        active={activeSection === "cta"} 
+        onClick={() => scrollToSection("cta")}
       >
         Trading Bot
       </NavLink>
       <NavLink 
-        active={currentPath === "/erfahrungen"} 
-        onClick={() => window.location.href = '/erfahrungen'}
+        active={activeSection === "testimonials"} 
+        onClick={() => scrollToSection("testimonials")}
       >
         Erfahrungen
       </NavLink>
       <NavLink 
-        active={currentPath === "/partner"} 
-        onClick={() => window.location.href = '/partner'}
+        active={activeSection === "partners"} 
+        onClick={() => scrollToSection("partners")}
       >
         Partner
       </NavLink>
       <NavLink 
-        active={currentPath === "/presse"} 
-        onClick={() => window.location.href = '/presse'}
+        active={activeSection === "benefits"} 
+        onClick={() => scrollToSection("benefits")}
       >
-        Presse
+        Vorteile
       </NavLink>
       <NavLink 
-        active={currentPath === "/status"} 
-        onClick={() => window.location.href = '/status'}
+        active={activeSection === "contact"} 
+        onClick={() => scrollToSection("contact")}
       >
-        Status
-      </NavLink>
-      <NavLink 
-        active={currentPath === "/faq"} 
-        onClick={() => window.location.href = '/faq'}
-      >
-        FAQ
+        Kontakt
       </NavLink>
       
       <motion.div
@@ -66,7 +56,7 @@ const DesktopNavigation = ({ activeSection, scrollToSection }: DesktopNavigation
       >
         <Button 
           className="bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all"
-          onClick={() => window.location.href = '/auth'}
+          onClick={() => {}}
         >
           <LogIn className="mr-2 h-4 w-4" />
           Anmelden
