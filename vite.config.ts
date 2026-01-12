@@ -7,6 +7,15 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    cors: true,
+    strictPort: false,
+    allowedHosts: true,
+    hmr: {
+      host: 'localhost',
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   plugins: [
     react(),
