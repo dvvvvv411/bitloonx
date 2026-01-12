@@ -47,7 +47,7 @@ const DesktopNavigation = ({ activeSection, scrollToSection }: DesktopNavigation
         active={activeSection === "contact"} 
         onClick={() => scrollToSection("contact")}
       >
-        Kontakt
+        Zugang sichern
       </NavLink>
       
       <motion.div

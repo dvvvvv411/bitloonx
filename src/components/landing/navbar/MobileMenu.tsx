@@ -55,7 +55,7 @@ const MobileMenu = ({ isOpen, activeSection, scrollToSection }: MobileMenuProps)
           active={activeSection === "contact"} 
           onClick={() => scrollToSection("contact")}
         >
-          Kontakt
+          Zugang sichern
         </MobileNavLink>
         
         {/* Login button in mobile menu */}
