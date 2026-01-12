@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
+import bitloonxLogo from "@/assets/bitloonx-logo.png";
 
 const Logo = () => {
   const isMobile = useIsMobile();
@@ -16,8 +17,8 @@ const Logo = () => {
     >
       <Link to="/">
         <img 
-          src="https://i.imgur.com/Q191f5z.png" 
-          alt="KRYPTO AI Logo" 
+          src={bitloonxLogo} 
+          alt="bitloonx Logo" 
           className="h-14 object-contain" 
         />
       </Link>
