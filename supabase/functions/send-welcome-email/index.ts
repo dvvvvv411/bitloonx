@@ -31,12 +31,12 @@ serve(async (req) => {
     }
 
     // Always use the correct login URL regardless of redirectUrl
-    const loginUrl = "https://ai-bitloon.com/auth";
+    const loginUrl = "https://bitloonx.de/auth";
 
     const emailResponse = await resend.emails.send({
-      from: "bitloon <noreply@bitloon.io>",
+      from: "bitloonx <noreply@bitloonx.de>",
       to: [email],
-      subject: "Ihre Zugangsdaten für bitloon",
+      subject: "Ihre Zugangsdaten für bitloonx",
       html: `
         <!DOCTYPE html>
         <html lang="de">
@@ -118,7 +118,7 @@ serve(async (req) => {
         <body>
           <div class="container">
             <header>
-              <img src="https://i.imgur.com/Q191f5z.png" alt="Bitloon Logo" style="height: 60px; margin-bottom: 10px;">
+              <img src="https://i.imgur.com/Q191f5z.png" alt="Bitloonx Logo" style="height: 60px; margin-bottom: 10px;">
             </header>
             <div class="content">
               <h2>Zugangsdaten für Ihr Konto</h2>
@@ -131,10 +131,10 @@ serve(async (req) => {
               <a href="${loginUrl}" class="cta">Zum Login</a>
             </div>
             <footer>
-              &copy; ${new Date().getFullYear()} Bitloon - GMS Management und Service GmbH | 
-              <a href="https://ai-bitloon.com/impressum" target="_blank">Impressum</a> | 
-              <a href="https://ai-bitloon.com" target="_blank">Webseite</a> | 
-              <a href="https://ai-bitloon.com/datenschutz" target="_blank">Datenschutz</a>
+              &copy; ${new Date().getFullYear()} Bitloonx - HAG1 Vermögensverwaltungs GmbH | 
+              <a href="https://bitloonx.de/impressum" target="_blank">Impressum</a> | 
+              <a href="https://bitloonx.de" target="_blank">Webseite</a> | 
+              <a href="https://bitloonx.de/datenschutz" target="_blank">Datenschutz</a>
             </footer>
           </div>
         </body>
