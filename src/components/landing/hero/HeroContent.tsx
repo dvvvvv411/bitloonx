@@ -103,7 +103,7 @@ const HeroContent = () => {
         {/* Gold CTA button - hidden on mobile */}
         {!isMobile && (
           <Button 
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => window.location.href = "https://web.bitloonx.de/auth"}
             className="w-full sm:w-auto bg-gold hover:bg-gold/90 text-black font-medium text-base px-6 py-5 rounded-md shadow-lg border border-transparent transition-all duration-300 flex items-center justify-center"
           >
             <motion.span
