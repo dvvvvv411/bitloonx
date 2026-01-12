@@ -1,9 +1,7 @@
 
-import { motion } from "framer-motion";
-import { LogIn, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LogIn } from "lucide-react";
 import NavLink from "./NavLink";
-import { useLocation } from "react-router-dom";
 
 interface DesktopNavigationProps {
   activeSection: string;
@@ -11,68 +9,47 @@ interface DesktopNavigationProps {
 }
 
 const DesktopNavigation = ({ activeSection, scrollToSection }: DesktopNavigationProps) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  
   return (
-    <div className="hidden md:flex items-center space-x-6">
+    <nav className="hidden md:flex items-center gap-1">
       <NavLink 
-        active={currentPath === "/" && activeSection === "hero"} 
+        active={activeSection === "hero"} 
         onClick={() => scrollToSection("hero")}
-        icon={<Star className="w-4 h-4 mr-1" />}
       >
         Home
       </NavLink>
       <NavLink 
-        active={currentPath === "/trading-bot"} 
-        onClick={() => window.location.href = '/trading-bot'}
+        active={activeSection === "benefits"}
+        onClick={() => scrollToSection("benefits")}
+      >
+        Vorteile
+      </NavLink>
+      <NavLink 
+        active={activeSection === "cta"}
+        onClick={() => scrollToSection("cta")}
       >
         Trading Bot
       </NavLink>
       <NavLink 
-        active={currentPath === "/erfahrungen"} 
-        onClick={() => window.location.href = '/erfahrungen'}
+        active={activeSection === "testimonials"}
+        onClick={() => scrollToSection("testimonials")}
       >
         Erfahrungen
       </NavLink>
       <NavLink 
-        active={currentPath === "/partner"} 
-        onClick={() => window.location.href = '/partner'}
+        active={activeSection === "partners"}
+        onClick={() => scrollToSection("partners")}
       >
         Partner
       </NavLink>
-      <NavLink 
-        active={currentPath === "/presse"} 
-        onClick={() => window.location.href = '/presse'}
-      >
-        Presse
-      </NavLink>
-      <NavLink 
-        active={currentPath === "/status"} 
-        onClick={() => window.location.href = '/status'}
-      >
-        Status
-      </NavLink>
-      <NavLink 
-        active={currentPath === "/faq"} 
-        onClick={() => window.location.href = '/faq'}
-      >
-        FAQ
-      </NavLink>
       
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+      {/* Decorative login button - no functionality */}
+      <Button 
+        className="ml-4 bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all cursor-default"
       >
-        <Button 
-          className="bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all"
-          onClick={() => window.location.href = '/auth'}
-        >
-          <LogIn className="mr-2 h-4 w-4" />
-          Anmelden
-        </Button>
-      </motion.div>
-    </div>
+        <LogIn className="mr-2 h-4 w-4" />
+        Anmelden
+      </Button>
+    </nav>
   );
 };
 

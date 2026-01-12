@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileNavLink from "./MobileNavLink";
-import { useLocation } from "react-router-dom";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -12,9 +11,6 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, activeSection, scrollToSection }: MobileMenuProps) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  
   if (!isOpen) return null;
   
   return (
@@ -26,53 +22,40 @@ const MobileMenu = ({ isOpen, activeSection, scrollToSection }: MobileMenuProps)
     >
       <div className="flex flex-col space-y-4 p-4">
         <MobileNavLink 
-          active={currentPath === "/" && activeSection === "hero"} 
+          active={activeSection === "hero"} 
           onClick={() => scrollToSection("hero")}
         >
           Home
         </MobileNavLink>
         <MobileNavLink 
-          active={currentPath === "/trading-bot"}
-          onClick={() => window.location.href = '/trading-bot'}
+          active={activeSection === "benefits"}
+          onClick={() => scrollToSection("benefits")}
+        >
+          Vorteile
+        </MobileNavLink>
+        <MobileNavLink 
+          active={activeSection === "cta"}
+          onClick={() => scrollToSection("cta")}
         >
           Trading Bot
         </MobileNavLink>
         <MobileNavLink 
-          active={currentPath === "/erfahrungen"}
-          onClick={() => window.location.href = '/erfahrungen'}
+          active={activeSection === "testimonials"}
+          onClick={() => scrollToSection("testimonials")}
         >
           Erfahrungen
         </MobileNavLink>
         <MobileNavLink 
-          active={currentPath === "/partner"}
-          onClick={() => window.location.href = '/partner'}
+          active={activeSection === "partners"}
+          onClick={() => scrollToSection("partners")}
         >
           Partner
         </MobileNavLink>
-        <MobileNavLink 
-          active={currentPath === "/presse"} 
-          onClick={() => window.location.href = '/presse'}
-        >
-          Presse
-        </MobileNavLink>
-        <MobileNavLink 
-          active={currentPath === "/status"} 
-          onClick={() => window.location.href = '/status'}
-        >
-          Status
-        </MobileNavLink>
-        <MobileNavLink 
-          active={currentPath === "/faq"} 
-          onClick={() => window.location.href = '/faq'}
-        >
-          FAQ
-        </MobileNavLink>
         
-        {/* Login button in mobile menu */}
+        {/* Decorative login button - no functionality */}
         <div className="pt-2 mt-2 border-t border-gold/10">
           <Button 
-            className="w-full bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all"
-            onClick={() => window.location.href = '/auth'} 
+            className="w-full bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all cursor-default"
           >
             <LogIn className="mr-2 h-4 w-4" />
             Anmelden
