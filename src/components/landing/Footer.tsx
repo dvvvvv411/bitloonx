@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,6 +10,10 @@ const Footer = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
   
   return (
@@ -83,10 +88,34 @@ const Footer = () => {
             </p>
             
             <div className="flex space-x-6">
-              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">Impressum</button>
-              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">Datenschutz</button>
-              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">AGB</button>
-              <button onClick={() => {}} className="text-gray-400 hover:text-gold text-sm transition-colors">Haftungsausschluss</button>
+              <Link 
+                to="/impressum" 
+                onClick={scrollToTop}
+                className="text-gray-400 hover:text-gold text-sm transition-colors"
+              >
+                Impressum
+              </Link>
+              <Link 
+                to="/datenschutz" 
+                onClick={scrollToTop}
+                className="text-gray-400 hover:text-gold text-sm transition-colors"
+              >
+                Datenschutz
+              </Link>
+              <Link 
+                to="/agb" 
+                onClick={scrollToTop}
+                className="text-gray-400 hover:text-gold text-sm transition-colors"
+              >
+                AGB
+              </Link>
+              <Link 
+                to="/haftungsausschluss" 
+                onClick={scrollToTop}
+                className="text-gray-400 hover:text-gold text-sm transition-colors"
+              >
+                Haftungsausschluss
+              </Link>
             </div>
           </div>
         </div>
