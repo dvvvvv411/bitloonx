@@ -1,13 +1,14 @@
 
 import { Link } from "react-router-dom";
+import bitloonxLogo from "@/assets/bitloonx-logo.png";
 
 const UserNavbarLogo = () => {
   return (
     <div className="flex items-center">
       <Link to="/nutzer" className="flex items-center">
         <img 
-          src="https://i.imgur.com/Q191f5z.png" 
-          alt="KRYPTO AI Logo" 
+          src={bitloonxLogo} 
+          alt="bitloonx Logo" 
           className="h-10 object-contain" 
         />
       </Link>

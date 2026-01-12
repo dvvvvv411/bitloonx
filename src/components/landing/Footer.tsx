@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import bitloonxLogo from "@/assets/bitloonx-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,7 +34,7 @@ const Footer = () => {
             className="col-span-1 md:col-span-2 lg:col-span-1"
           >
             <div className="mb-4">
-              <img src="https://i.imgur.com/Q191f5z.png" alt="bitloon Logo" className="h-14 object-contain" />
+              <img src={bitloonxLogo} alt="bitloonx Logo" className="h-14 object-contain" />
             </div>
             <p className="text-gray-400 mb-4">
               Die Zukunft des Krypto-Tradings mit KI-Unterstützung. Maximiere deine Renditen durch unseren fortschrittlichen Algorithmus.
