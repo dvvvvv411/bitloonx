@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} bitloon. Alle Rechte vorbehalten.
+              &copy; {currentYear} bitloonx. Alle Rechte vorbehalten.
             </p>
             
             <div className="flex space-x-6">

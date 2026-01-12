@@ -34,9 +34,9 @@ serve(async (req) => {
     const displayName = name.split(' ')[0].trim();
 
     const emailResponse = await resend.emails.send({
-      from: "bitloon <noreply@bitloon.io>",
+      from: "bitloonx <noreply@bitloonx.de>",
       to: [email],
-      subject: "Danke für dein Interesse an bitloon",
+      subject: "Danke für dein Interesse an bitloonx",
       html: `
       <!DOCTYPE html>
 <html lang="de">
@@ -108,7 +108,7 @@ serve(async (req) => {
 <body>
   <div class="container">
     <header>
-      <img src="https://i.imgur.com/Q191f5z.png" alt="Bitloon Logo" style="height: 60px; margin-bottom: 10px;">
+      <img src="https://i.imgur.com/Q191f5z.png" alt="Bitloonx Logo" style="height: 60px; margin-bottom: 10px;">
     </header>
     <div class="content">
       <h2>Hallo ${displayName},</h2>
@@ -119,10 +119,10 @@ serve(async (req) => {
       </div>
     </div>
     <footer>
-      &copy; 2025 Bitloon - GMS Management und Service GmbH | 
-      <a href="https://ai-bitloon.com/impressum" target="_blank">Impressum</a> | 
-      <a href="https://ai-bitloon.com" target="_blank">Webseite</a> | 
-      <a href="https://ai-bitloon.com/datenschutz" target="_blank">Datenschutz</a>
+      &copy; 2025 Bitloonx - HAG1 Vermögensverwaltungs GmbH | 
+      <a href="https://bitloonx.de/impressum" target="_blank">Impressum</a> | 
+      <a href="https://bitloonx.de" target="_blank">Webseite</a> | 
+      <a href="https://bitloonx.de/datenschutz" target="_blank">Datenschutz</a>
     </footer>
   </div>
 </body>
