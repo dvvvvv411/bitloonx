@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, TrendingUp, Shield, Clock, Loader2, ArrowRight } from "lucide-react";
+import { CheckCircle2, TrendingUp, Shield, Clock, Loader2, ArrowRight, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
+import bitloonxLogo from "@/assets/bitloonx-logo.png";
 
 const trustElements = [
-  { icon: CheckCircle2, text: "Kostenlose Registrierung" },
+  { icon: Shield, text: "Kostenlose Registrierung" },
   { icon: TrendingUp, text: "Bis zu 30% monatliche Rendite" },
   { icon: Clock, text: "24/7 automatisierter Handel" },
-  { icon: Shield, text: "Keine Vorkenntnisse nötig" },
+  { icon: Users, text: "Keine Vorkenntnisse nötig" },
 ];
 
 const LeadFormSection = () => {
@@ -89,23 +90,22 @@ const LeadFormSection = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-32 bg-casino-dark overflow-hidden">
-      {/* Background Effects */}
+    <section className="relative py-20 md:py-32 bg-black overflow-hidden">
+      {/* Background Effects - dezenter */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/3 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gold/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold/2 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Column - Trust Elements */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="flex flex-col justify-center space-y-8"
           >
             <div>
               <motion.span 
@@ -150,27 +150,21 @@ const LeadFormSection = () => {
               ))}
             </div>
 
-            {/* Testimonial */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
-              className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
-            >
-              <p className="text-white/80 italic mb-4">
-                "Der KI Trading Bot hat meine Erwartungen übertroffen. Vollautomatisch und zuverlässig - genau das, was ich gesucht habe."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center text-black font-bold">
-                  M
-                </div>
-                <div>
-                  <p className="text-white font-medium">Michael S.</p>
-                  <p className="text-white/50 text-sm">Aktiver Nutzer seit 2024</p>
-                </div>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-gold">2.847+</div>
+                <div className="text-white/50 text-sm">Aktive Nutzer</div>
               </div>
-            </motion.div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-gold">94%</div>
+                <div className="text-white/50 text-sm">Erfolgsquote</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-gold">24/7</div>
+                <div className="text-white/50 text-sm">Automatisiert</div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Right Column - Lead Form */}
@@ -179,13 +173,20 @@ const LeadFormSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center justify-center"
           >
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-gold/30 via-gold/10 to-gold/30 rounded-3xl blur-xl opacity-50" />
-              
-              {/* Form Card */}
-              <div className="relative bg-casino-card/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+            <div className="relative w-full">
+              {/* Glassmorphic Form Card - kein Glow */}
+              <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-10">
+                {/* Logo */}
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src={bitloonxLogo} 
+                    alt="bitloonx Logo" 
+                    className="h-12 object-contain" 
+                  />
+                </div>
+
                 <div className="text-center mb-8">
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                     Jetzt bewerben
