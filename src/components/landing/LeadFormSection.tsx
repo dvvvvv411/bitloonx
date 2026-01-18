@@ -90,7 +90,7 @@ const LeadFormSection = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-32 bg-black overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-casino-darker overflow-hidden">
       {/* Background Effects - dezenter */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gold/3 rounded-full blur-3xl" />
