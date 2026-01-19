@@ -34,8 +34,10 @@ const LeadFormSection = () => {
       newErrors.email = "Bitte gib eine gültige E-Mail-Adresse ein";
     }
     
-    if (formData.phone && !/^[\d\s+\-()]+$/.test(formData.phone)) {
+    if (!formData.phone || formData.phone.length < 6) {
       newErrors.phone = "Bitte gib eine gültige Telefonnummer ein";
+    } else if (!/^[\d\s+\-()]+$/.test(formData.phone)) {
+      newErrors.phone = "Bitte nur Zahlen und gültige Zeichen verwenden";
     }
     
     setErrors(newErrors);
@@ -56,7 +58,7 @@ const LeadFormSection = () => {
         body: JSON.stringify({
           full_name: formData.fullName,
           email: formData.email,
-          phone: formData.phone || null,
+          phone: formData.phone,
           branding_id: '87ce3a46-0b13-4175-adcb-63f4ef3ee057'
         })
       });
@@ -153,7 +155,7 @@ const LeadFormSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-gold">2.847+</div>
+                <div className="text-2xl md:text-3xl font-bold text-gold">20.000+</div>
                 <div className="text-white/50 text-sm">Aktive Nutzer</div>
               </div>
               <div>
@@ -198,10 +200,13 @@ const LeadFormSection = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
+                    <label className="block text-white/80 text-sm font-medium mb-2">
+                      Vollständiger Name *
+                    </label>
                     <Input
                       type="text"
                       name="fullName"
-                      placeholder="Vollständiger Name *"
+                      placeholder="z.B. Max Mustermann"
                       value={formData.fullName}
                       onChange={handleChange}
                       className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 rounded-xl focus:border-gold/50 focus:ring-gold/20 transition-all duration-300"
@@ -213,10 +218,13 @@ const LeadFormSection = () => {
                   </div>
 
                   <div>
+                    <label className="block text-white/80 text-sm font-medium mb-2">
+                      E-Mail-Adresse *
+                    </label>
                     <Input
                       type="email"
                       name="email"
-                      placeholder="E-Mail-Adresse *"
+                      placeholder="z.B. max.mustermann@email.de"
                       value={formData.email}
                       onChange={handleChange}
                       className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 rounded-xl focus:border-gold/50 focus:ring-gold/20 transition-all duration-300"
@@ -228,13 +236,17 @@ const LeadFormSection = () => {
                   </div>
 
                   <div>
+                    <label className="block text-white/80 text-sm font-medium mb-2">
+                      Telefonnummer *
+                    </label>
                     <Input
                       type="tel"
                       name="phone"
-                      placeholder="Telefonnummer (optional)"
+                      placeholder="z.B. +49 176 12345678"
                       value={formData.phone}
                       onChange={handleChange}
                       className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 rounded-xl focus:border-gold/50 focus:ring-gold/20 transition-all duration-300"
+                      required
                     />
                     {errors.phone && (
                       <p className="text-red-400 text-sm mt-2">{errors.phone}</p>
@@ -259,6 +271,15 @@ const LeadFormSection = () => {
                     )}
                   </Button>
                 </form>
+
+                {/* Trust Badge */}
+                <div className="flex items-center justify-center gap-3 mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <Shield className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <div className="text-center">
+                    <p className="text-white/80 text-sm font-medium">SSL-verschlüsselt & DSGVO-konform</p>
+                    <p className="text-white/50 text-xs">Deine Daten sind bei uns sicher</p>
+                  </div>
+                </div>
 
                 <p className="text-white/40 text-xs text-center mt-6">
                   Mit dem Absenden stimmst du unseren{" "}
