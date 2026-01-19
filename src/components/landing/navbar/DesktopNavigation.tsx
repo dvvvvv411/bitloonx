@@ -50,7 +50,7 @@ const DesktopNavigation = ({ activeSection, scrollToSection }: DesktopNavigation
       >
         <Button 
           className="bg-gradient-to-r from-gold to-gold-light text-black font-medium hover:shadow-md hover:shadow-gold/20 transition-all"
-          onClick={() => window.location.href = "https://web.bitloonx.de/auth"}
+          onClick={() => document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" })}
         >
           <LogIn className="mr-2 h-4 w-4" />
           Anmelden

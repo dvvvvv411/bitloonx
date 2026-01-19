@@ -92,7 +92,7 @@ const AccessCard = ({ availablePlaces, activeUsers, onPlacesChange }: AccessCard
               className="w-full"
             >
               <Button 
-                onClick={() => window.location.href = "https://web.bitloonx.de/auth"}
+                onClick={() => document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" })}
                 className="w-full bg-gold hover:bg-gold-light text-black text-lg py-6 relative overflow-hidden group"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 font-medium">
